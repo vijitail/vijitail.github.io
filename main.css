@@ -1,0 +1,114 @@
+*{
+    font-size:20px;
+}
+
+.container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#header>.row{
+    min-height:100vh;
+}
+
+.profile-img{
+    border-radius: 100%;
+    transition: transform 0.5s;
+}
+
+.profile-img:hover{
+    transform: translateY(-10px);
+}
+
+a{
+    color: #212529;
+}
+
+a:hover{
+    text-decoration: none;
+    color:#111;
+}
+
+@media only screen and (max-width:425px){
+    
+    .display-4{
+        font-size:2.7rem;
+    }
+    
+    h2{
+        font-size:1.6rem;
+    }
+    
+}
+
+@supports (mix-blend-mode: lighten) {
+    
+  .instagram-text,.codepen-text,.email-text,.location-text {
+    display: inline-block;
+    position: relative;
+    color: #000;
+    background: #fff;
+    mix-blend-mode: multiply;
+  }
+    
+  .instagram-text::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #833ab4;  
+    background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  
+    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); 
+    pointer-events: none;
+    mix-blend-mode: screen;
+    }
+    
+    .codepen-text::before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: #4b6cb7; 
+        background: -webkit-linear-gradient(to right, #182848, #4b6cb7); 
+        background: linear-gradient(to right, #182848, #4b6cb7);
+        pointer-events: none;
+        mix-blend-mode: screen;
+    }
+    
+    .email-text::before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: #e52d27; 
+        background: -webkit-linear-gradient(to right, #b31217, #e52d27); 
+        background: linear-gradient(to right, #b31217, #e52d27);
+        pointer-events: none;
+        mix-blend-mode: screen;
+    }
+    
+    .location-text::before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: #c94b4b;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #4b134f, #c94b4b);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #4b134f, #c94b4b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        pointer-events: none;
+        mix-blend-mode: screen;
+    }
+}
