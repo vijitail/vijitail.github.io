@@ -1,0 +1,3 @@
+[submodule "headless-wordpress-pwa"]
+	path = headless-wordpress-pwa
+	url = https://github.com/vijitail/headless-wordpress-pwa.git
