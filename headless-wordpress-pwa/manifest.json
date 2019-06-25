@@ -3,8 +3,8 @@
   "background_color": "#ffffff",
   "display": "fullscreen",
   "orientation": "portrait",
-  "Scope": "/",
-  "start_url": "/",
+  "Scope": "/headless-wordpress-pwa",
+  "start_url": "/headless-wordpress-pwa",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
