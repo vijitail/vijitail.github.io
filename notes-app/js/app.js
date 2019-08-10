@@ -7,7 +7,7 @@ const noteCard = note => /*html*/ `
         <div class='card-body'>
             <h5 class="card-title">${note.title}</h5>
             <p class="card-text mt-2">${note.description}</p>
-            <a href=${`notes-app/note.html?id=${note._id}&title=${encodeURI(
+            <a href=${`note.html?id=${note._id}&title=${encodeURI(
                 note.title
             )}&description=${encodeURI(
                 note.description
