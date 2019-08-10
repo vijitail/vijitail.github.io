@@ -100,7 +100,7 @@ if (createNoteForm) {
                     data.errors.description
             }
         } else {
-            window.history.back()
+            window.location.href = '/'
         }
     })
 }
@@ -112,6 +112,6 @@ const deleteNote = async e => {
     })
     const data = await response.json()
     if (data) {
-        window.history.back()
+        window.location.href = '/'
     }
 }
