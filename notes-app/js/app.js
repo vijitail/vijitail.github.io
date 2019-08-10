@@ -112,6 +112,6 @@ const deleteNote = async e => {
     })
     const data = await response.json()
     if (data) {
-        window.history.back()
+        window.location.reload()
     }
 }
