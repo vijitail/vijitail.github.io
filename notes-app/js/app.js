@@ -36,11 +36,9 @@ if (notesContainer) {
         .then(
             notes =>
                 (notesContainer.innerHTML = `${
-                    notes.length !== 0 ? (
-                        notes.map(note => noteCard(note))
-                    ) : (
-                        <p>No notes have been created yet.</p>
-                    )
+                    notes.length !== 0
+                        ? notes.map(note => noteCard(note))
+                        : '<p>No notes have been created yet.</p>'
                 }`)
         )
         .catch(err => console.log(err.message))
