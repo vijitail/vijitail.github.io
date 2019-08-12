@@ -34,10 +34,10 @@ if (notesContainer) {
 </div>`
     getNotes()
         .then(
-            notes =>
+            data =>
                 (notesContainer.innerHTML = `${
-                    notes.length !== 0
-                        ? notes.map(note => noteCard(note))
+                    data.notes.length !== 0
+                        ? data.notes.map(note => noteCard(note))
                         : '<p>No notes have been created yet.</p>'
                 }`)
         )
