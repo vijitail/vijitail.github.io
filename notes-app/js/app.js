@@ -2,6 +2,8 @@ const notesContainer = document.getElementById('notesContainer')
 
 const SERVER_URL = 'https://vijit-notes-api.herokuapp.com/notes'
 
+queryParams = new URL(document.location).searchParams
+
 const noteCard = note => /*html*/ `
     <div class='card'>
         <div class='card-body'>
@@ -19,8 +21,8 @@ const noteCard = note => /*html*/ `
     </div>
 `
 
-const getNotes = async () => {
-    const response = await fetch(SERVER_URL)
+const getNotes = async page => {
+    const response = await fetch(SERVER_URL + '/?page=' + page)
     const data = await response.json()
     return data
 }
@@ -32,10 +34,11 @@ if (notesContainer) {
         <h5 class="card-title">Loading ...</h5>
     </div>
 </div>`
-    getNotes()
+    const page = queryParams.get('page') || '1';
+    getNotes(page)
         .then(data => {
             const renderPaginationLinks = pages => {
-                let html = /*html*/ `<ul class="pagination">`
+                let html = /*html*/ `<ul class="pagination mt-4">`
                 for (let i = 1; i <= pages; i++)
                     html += /*html*/ `<li class="page-item"><a class="page-link" href=${`?page=${i}`}>${i}</a></li>`
                 html += /*html*/ `</ul>`
@@ -56,8 +59,6 @@ const createNoteForm = document.forms['createNoteForm']
 if (createNoteForm) {
     const titleInput = document.getElementById('title')
     const descriptionInput = document.getElementById('description')
-
-    queryParams = new URL(document.location).searchParams
 
     titleInput.value = queryParams.get('title')
     descriptionInput.value = queryParams.get('description')
