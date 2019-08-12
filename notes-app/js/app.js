@@ -30,6 +30,7 @@ const renderPaginationLinks = pages => {
     for (let i = 1; i <= pages; i++)
         html += /*html*/ `<li class="page-item"><a class="page-link" href=${`?page=${i}`}>${i}</a></li>`
     html += /*html*/ `</ul>`
+    return html
 }
 
 // display the notes
