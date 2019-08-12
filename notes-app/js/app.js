@@ -34,13 +34,15 @@ if (notesContainer) {
         <h5 class="card-title">Loading ...</h5>
     </div>
 </div>`
-    const page = queryParams.get('page') || '1';
+    const page = queryParams.get('page') || '1'
     getNotes(page)
         .then(data => {
             const renderPaginationLinks = pages => {
                 let html = /*html*/ `<ul class="pagination mt-4">`
                 for (let i = 1; i <= pages; i++)
-                    html += /*html*/ `<li class="page-item"><a class="page-link" href=${`?page=${i}`}>${i}</a></li>`
+                    html += /*html*/ `<li class="page-item"><a class=${`page-link ${i ===
+                        parseInt(page) &&
+                        'active'}`} href=${`?page=${i}`}>${i}</a></li>`
                 html += /*html*/ `</ul>`
                 return html
             }
