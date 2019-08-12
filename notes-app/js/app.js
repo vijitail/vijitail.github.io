@@ -25,14 +25,6 @@ const getNotes = async () => {
     return data
 }
 
-const renderPaginationLinks = pages => {
-    let html = /*html*/ `<ul class="pagination">`
-    for (let i = 1; i <= pages; i++)
-        html += /*html*/ `<li class="page-item"><a class="page-link" href=${`?page=${i}`}>${i}</a></li>`
-    html += /*html*/ `</ul>`
-    return html
-}
-
 // display the notes
 if (notesContainer) {
     notesContainer.innerHTML = /*html*/ `<div class='card'>
@@ -41,14 +33,21 @@ if (notesContainer) {
     </div>
 </div>`
     getNotes()
-        .then(
-            data =>
-                (notesContainer.innerHTML = `${
-                    data.notes.length !== 0
-                        ? data.notes.map(note => noteCard(note))
-                        : '<p>No notes have been created yet.</p>'
-                } ${data.pages > 1 && renderPaginationLinks(data.pages)}`)
-        )
+        .then(data => {
+            const renderPaginationLinks = pages => {
+                let html = /*html*/ `<ul class="pagination">`
+                for (let i = 1; i <= pages; i++)
+                    html += /*html*/ `<li class="page-item"><a class="page-link" href=${`?page=${i}`}>${i}</a></li>`
+                html += /*html*/ `</ul>`
+                return html
+            }
+
+            return (notesContainer.innerHTML = `${
+                data.notes.length !== 0
+                    ? data.notes.map(note => noteCard(note))
+                    : '<p>No notes have been created yet.</p>'
+            } ${data.pages > 1 && renderPaginationLinks(data.pages)}`)
+        })
         .catch(err => console.log(err.message))
 }
 
