@@ -112,7 +112,7 @@ if (createNoteForm) {
                     data.errors.description
             }
         } else {
-            window.history.back()
+            window.location.replace(document.referrer)
         }
     })
 }
