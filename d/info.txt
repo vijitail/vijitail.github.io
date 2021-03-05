@@ -1,0 +1,8 @@
+chat => (client, server)
+rmi => (client, server, interfaceconverter)
+rpc => (client, server)
+mutual-exclusion => (tokenserver, tokenclient1, tokenclient2)
+election => (election)
+clock-sync => (client, server)
+two-phase-commit => (client, server)
+web-service => (default.aspx, default.aspx.cs, service.cs)
