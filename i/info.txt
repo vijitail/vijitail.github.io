@@ -1,0 +1,41 @@
+
+1. 
+Implement Basic Intensity transformation functions 
+A) Image Inverse 
+B) Log Transformation 
+C) Power-law Transformation 
+
+2. 
+Piecewise Transformation 
+A) Contrast Stretching 
+B) Thresholding 
+C) Bit-Plane Slicing 
+
+3. 
+Implement Histogram Equalization 
+
+4. 
+Image filtering in Spatial Domain 
+A) Low-pass Filter/Smoothing Filters 
+(Average, Weighted Average, Median and Gaussian) 
+
+B) High-pass Filter / Sharpening Filter 
+(Laplacian Filter, Sobel, Robert and Prewitt Filter to detect edge) 
+
+5. 
+Color Image Processing 
+A) Pseudocoloring 
+B) Separating the RGB Channels 
+C) Color Slicing 
+
+6. 
+Image Compression Techniques and watermarking 
+A) Implement Huffman Coding 
+B) Add a watermark to the image 
+
+7. 
+Basic Morphological Transformations 
+A) Boundary Extraction 
+B) Thinning and Thickening 
+C) Hole filling and Skeletons 
+
